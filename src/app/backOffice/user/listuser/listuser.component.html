@@ -1,0 +1,42 @@
+<section role="main" class="content-body card-margin" style="width: 2400px;">
+    <div class="row">
+      <div class="col-lg-6">
+        <section class="card">
+          <header class="card-header">
+            <div class="card-actions">
+              <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+              <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+            </div>
+            <h2 class="card-title">Liste deliveries</h2>
+          </header>
+          <div class="card-body">
+            <table class="table table-responsive-md mb-0">
+              <thead>
+                <tr>
+                  <th>idusers</th>
+                  <th>firstName</th>
+                  <th>lastname</th>
+                  <th>email</th>
+                  <th>username</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active" *ngFor="let del of users">
+                  <td>{{del.id}}</td>
+                  <td>{{del.firstName}}</td>
+                  <td>{{del.lastName}}</td>
+                  <td>{{del.email}}</td>
+                  <td>{{del.username}}</td>
+                </tr>
+    
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    
+    </div>
+    
+    </section>
+    
