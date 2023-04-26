@@ -18,7 +18,9 @@ import { FormsModule } from '@angular/forms';
 import { DeliverysmenComponent } from './backOffice/deliverysmen/deliverysmen.component';
 import { DeliverysComponent } from './backOffice/deliverys/deliverys.component';
 import { ListuserComponent } from './backOffice/user/listuser/listuser.component';
-import { AdduserComponent } from './backOffice/user/adduser/adduser.component';
+import { AdduserComponent } from './frontOffice/user/adduser/adduser.component';
+import { LoginComponent } from './frontOffice/user/login/login.component';
+import { UpdateuserComponent } from './frontOffice/user/updateuser/updateuser.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AdduserComponent } from './backOffice/user/adduser/adduser.component';
     DeliverysmenComponent,
     DeliverysComponent,
     ListuserComponent,
-    AdduserComponent
+    AdduserComponent,
+    LoginComponent,
+    UpdateuserComponent
 
   ],
   imports: [

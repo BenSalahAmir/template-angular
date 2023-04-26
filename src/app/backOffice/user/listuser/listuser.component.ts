@@ -11,9 +11,22 @@ export class ListuserComponent {
   constructor(private service:UsersServiceService){}
 
   ngOnInit(): void {
-    this.service.getUsers().subscribe(res => {
-      console.log(res)
-      this.users=res})
+    this.getUsers();
+
+}
+getUsers(): void {
+  this.service.getUsers().subscribe(users => {
+    console.log(users);
+    this.users = users;
+  });
+}
+
+
+onDelete(userId: string): void {
+  this.service.deleteUser(userId).subscribe(() => {
+    this.getUsers();
+    console.log(`User with id ${userId} deleted`);
+  });
 }
 
 }

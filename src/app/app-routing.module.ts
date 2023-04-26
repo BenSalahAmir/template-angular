@@ -7,11 +7,11 @@ import { AddDeliveryComponent } from './backOffice/add-delivery/add-delivery.com
 import { DeliverysmenComponent } from './backOffice/deliverysmen/deliverysmen.component';
 import { DeliverysComponent } from './backOffice/deliverys/deliverys.component';
 import { ListuserComponent } from './backOffice/user/listuser/listuser.component';
-import { AdduserComponent } from './backOffice/user/adduser/adduser.component';
+import { AdduserComponent } from './frontOffice/user/adduser/adduser.component';
+import { LoginComponent } from './frontOffice/user/login/login.component';
+import { UpdateuserComponent } from './frontOffice/user/updateuser/updateuser.component';
 
 const routes: Routes = [{
-
-  
   path:'admin',
   component:AllTemplateAdminComponent,
   children:[
@@ -49,11 +49,21 @@ const routes: Routes = [{
   ]*/
 
 },
-
 {
   path:'signup',
   component: AdduserComponent
 },
+{
+  path:'signin',
+  component: LoginComponent
+},
+
+{
+  path:'profile',
+  component: UpdateuserComponent
+},
+
+
 
 {
   path:'front',
@@ -62,7 +72,8 @@ const routes: Routes = [{
     
     
   ]
-}
+},
+
 
 ];
 

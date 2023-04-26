@@ -27,8 +27,9 @@ Submit(form:any){
       "email": this.email,
       "password":this.password,
       "phonenumber": this.phonenumber
-    
     }
+    console.log(form)
+
     console.log(body)
     let data=JSON.stringify(form.value)
     this.service.adduser(body).subscribe(res => console.log(res))
