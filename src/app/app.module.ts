@@ -14,7 +14,7 @@ import { BodyComponent } from './frontOffice/body/body.component';
 import { HeaderComponent } from './frontOffice/header/header.component';
 import { AddDeliveryComponent } from './backOffice/add-delivery/add-delivery.component';
 import {HttpClientModule} from "@angular/common/http"
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeliverysmenComponent } from './backOffice/deliverysmen/deliverysmen.component';
 import { DeliverysComponent } from './backOffice/deliverys/deliverys.component';
 import { ListuserComponent } from './backOffice/user/listuser/listuser.component';
@@ -47,7 +47,8 @@ import { UpdateuserComponent } from './frontOffice/user/updateuser/updateuser.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,4 +38,8 @@
   button:hover {
     background-color: #0069d9;
   }
-  
+  .signup-link {
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+  }

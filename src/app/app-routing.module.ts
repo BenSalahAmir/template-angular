@@ -58,10 +58,10 @@ const routes: Routes = [{
   component: LoginComponent
 },
 
-{
-  path:'profile',
-  component: UpdateuserComponent
-},
+
+
+
+
 
 
 
@@ -69,7 +69,10 @@ const routes: Routes = [{
   path:'front',
   component: AllTemplateUserComponent,
   children:[
-    
+    {
+      path:'profile',
+      component: UpdateuserComponent
+    }
     
   ]
 },

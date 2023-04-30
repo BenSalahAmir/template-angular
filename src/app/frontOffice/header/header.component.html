@@ -150,21 +150,18 @@
                                         </li>
 
                                         <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle"[routerLink]="['/signin']">
-                                                Login
-                                            </a>
-                                        </li>
-
-                                        <li class="dropdown dropdown-mega">
-                                            <a class="dropdown-item dropdown-toggle"[routerLink]="['/profile']">
+                                            <a class="dropdown-item dropdown-toggle"[routerLink]="['profile']">
                                                 profile
                                             </a>
                                         </li>
 
 
+                                       
+                                          
 
 
 
+                                        
 
 
 
@@ -683,13 +680,16 @@
                         </div>
                         <div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
                             <div class="header-nav-feature header-nav-features-search d-inline-flex">
-                                <a [routerLink]="['/signup']" class="header-nav-features-toggle text-decoration-none" data-focus="headerSearch" aria-label="Search"><i class="fas fa-search header-nav-top-icon"></i></a>
-                                <div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
+                                <a class="dropdown-item dropdown-toggle" (click)="logout()">
+                                    <i class="fas fa-sign-out-alt header-nav-top-icon text-color-dark"></i>
+                                    Logout
+                                  </a>
+                                                                  <div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
                                     <form role="search" action="https://www.okler.net/previews/porto/9.9.2/page-search-results.html" method="get">
                                         <div class="simple-search input-group">
                                             <input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
                                             <button class="btn" type="submit" aria-label="Search">
-                                                <i class="fas fa-search header-nav-top-icon text-color-dark"></i>
+                                                <i class="fas fa-sign-out-alt header-nav-top-icon text-color-dark"></i>
                                             </button>
                                         </div>
                                     </form>
@@ -703,6 +703,9 @@
                                         <span class="cart-qty">1</span>
                                     </span>
                                 </a>
+
+                               
+                                  
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="feature-cursor-effect.html">Cursor Effect</a></li>
                                     <li><a class="dropdown-item" href="feature-grid-system.html">Grid System</a></li>

@@ -33,15 +33,17 @@ export class UpdateuserComponent implements OnInit{
   }
 
   onSubmit(): void {
+    console.log(this.firstname)
     const user = {
       username: this.username,
-      firstName: this.firstname,
-      lastName: this.lastname,
+      firstname: this.firstname,
+      lastname: this.lastname,
       email: this.email,
       password: this.password,
-      phoneNumber: this.phonenumber
+      phonenumber: this.phonenumber
     };
 
+    console.log(user)
     this.service.updateUser(this.userId, user).subscribe(
       () => {
         console.log('User updated successfully');

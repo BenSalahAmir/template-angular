@@ -71,6 +71,10 @@ export class UsersServiceService implements OnInit{
       return localStorage.getItem('token');
     }
 
+    signOut(): void {
+      localStorage.clear();
+    }
+
 
 
 

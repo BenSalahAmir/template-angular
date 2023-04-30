@@ -1,18 +1,23 @@
-<form (ngSubmit)="onSubmit()">
-    <label>
-      Username:
-      <input type="text" [(ngModel)]="username" name="username">
-    </label>
-    <label>
-      Password:
-      <input type="password" [(ngModel)]="password" name="password">
-    </label>
-    <button type="submit">Login</button>
-  </form>
-  <div *ngIf="accessToken">Access token: {{ accessToken }}</div>
-
-  {{userId}}
-
-
-
-
+<div style="background: #f6f8fa; display: flex; align-items: center; justify-content: center; height: 100vh;">
+  <div style="background-color: #fff; border-radius: 6px; width: 400px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div style="padding: 24px;">
+      <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 24px;text-align: center">Sign in to Shopiny</h1>
+      <form (ngSubmit)="onSubmit()">
+        <div style="display: flex; flex-direction: column; margin-bottom: 16px;">
+          <label style="font-weight: bold; margin-bottom: 4px;">Username </label>
+          <input type="text" [(ngModel)]="username" name="username" style="padding: 10px; border-radius: 6px; border: 1px solid #d1d5da; outline: none;">
+        </div>
+        <div style="display: flex; flex-direction: column; margin-bottom: 16px;">
+          <label style="font-weight: bold; margin-bottom: 4px;">Password</label>
+          <input type="password" [(ngModel)]="password" name="password" style="padding: 10px; border-radius: 6px; border: 1px solid #d1d5da; outline: none;">
+        </div>
+        <button type="submit" style="background-color: #28a745; color: #fff; border: none; border-radius: 6px; padding: 10px; cursor: pointer;">Sign in</button>
+        <div *ngIf="errorMessage" style="color: red; margin-top: 8px;">{{ errorMessage }}</div>
+      </form>
+      <div class="signup-link">
+        <span>Don't have an account?</span>
+        <a [routerLink]="['/signup']">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
