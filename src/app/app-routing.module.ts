@@ -10,6 +10,7 @@ import { ListuserComponent } from './backOffice/user/listuser/listuser.component
 import { AdduserComponent } from './frontOffice/user/adduser/adduser.component';
 import { LoginComponent } from './frontOffice/user/login/login.component';
 import { UpdateuserComponent } from './frontOffice/user/updateuser/updateuser.component';
+import { LoginhazemComponent } from './loginhazem/loginhazem.component';
 
 const routes: Routes = [{
   path:'admin',
@@ -40,18 +41,16 @@ const routes: Routes = [{
 },
 {
   path:'',
-  component:AllTemplateUserComponent,
-  /*children:[
-    {
-      path:'admin',
-      component:BodyAdminComponent
-    }
-  ]*/
-
+  component:AllTemplateUserComponent, pathMatch: 'full'
+ 
 },
 {
   path:'signup',
   component: AdduserComponent
+},
+{
+  path:'loginhazem',
+  component: LoginhazemComponent
 },
 {
   path:'signin',

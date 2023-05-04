@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UsersServiceService } from 'src/app/Service/Users/users-service.service';
 
 
@@ -18,7 +19,7 @@ export class UpdateuserComponent implements OnInit{
   
   user: any = {};
 
-  constructor(private service: UsersServiceService) { }
+  constructor(private service: UsersServiceService , private ac:ActivatedRoute,private router :Router ) { }
   ngOnInit() {
     // // get user id from storage
     // this.userId = localStorage.getItem('userId');
@@ -30,6 +31,23 @@ export class UpdateuserComponent implements OnInit{
 
     const userId = this.service.getUserIdFromToken();
     console.log('User id:', userId);
+
+  //   this.userId = this.ac.snapshot.params['id'];
+
+  // this.service.getUserById(this.userId).subscribe(
+  //   (user: any) => {
+  //     this.username = user.username;
+  //     this.firstname = user.firstname;
+  //     this.lastname = user.lastname;
+  //     this.email = user.email;
+  //     this.password = user.password;
+  //     this.phonenumber = user.phonenumber;
+  //   },
+  //   error => {
+  //     console.log(`Error getting user by ID: ${error}`);
+  //     // Handle errors here
+  //   }
+  // );
   }
 
   onSubmit(): void {
@@ -46,12 +64,12 @@ export class UpdateuserComponent implements OnInit{
     console.log(user)
     this.service.updateUser(this.userId, user).subscribe(
       () => {
+        this.router.navigate(['/front']); // Redirect to the "front" page
+
         console.log('User updated successfully');
-        // Do something when the user is updated successfully
       },
       error => {
         console.log(`Error updating user: ${error}`);
-        // Handle errors here
       }
     );
   }

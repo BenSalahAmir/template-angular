@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersServiceService } from 'src/app/Service/Users/users-service.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class AdduserComponent {
 
   errorMessage: string = "";
 submitting: boolean = false;
-  constructor(private service:UsersServiceService,private router: Router){}
+  constructor(private service:UsersServiceService, private router: Router){}
 
 ngOnInit(): void {
 }

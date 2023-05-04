@@ -10,6 +10,9 @@ import { AccessTokenResponse } from 'src/app/AccessTokenResponse';
 export class UsersServiceService implements OnInit{
   private loginUrl = 'http://localhost:8080/user/login'; 
   private apiURL = 'http://localhost:8080/user';
+
+  private url = `http://localhost:8180/auth/admin/master/console/#/realms/central-realm/users`;
+
   private us="";
 
 
@@ -43,6 +46,49 @@ export class UsersServiceService implements OnInit{
   }
 
 
+   getRoleFromToken(): string | null {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      const payload = token.split('.')[1];
+      const decodedPayload = window.atob(payload);
+      const parsedPayload = JSON.parse(decodedPayload);
+      const resourceAccess = parsedPayload.resource_access;
+      if (resourceAccess && resourceAccess['products-app']) {
+        const roles = resourceAccess['products-app'].roles;
+        if (roles.includes('admin')) {
+          return 'admin';
+        } else if (roles.includes('member')) {
+          return 'member';
+        }
+      }
+    }
+    return null;
+  }
+  
+  
+
+  // getRoleFromToken(): string | null {
+  //   const token = localStorage.getItem('accessToken');
+  //   if (token) {
+  //     const payload = token.split('.')[1];
+  //     const decodedPayload = window.atob(payload);
+  //     const parsedPayload = JSON.parse(decodedPayload);
+  //     const roles = parsedPayload.realm_access.roles;
+  //     if (roles.includes('admin')) {
+  //       return 'admin';
+  //     } else if (roles.includes('member')) {
+  //       return 'member';
+  //     } else {
+  //       // Handle other roles if needed
+  //       return null;
+  //     }
+      
+  //   }
+  //   return null;
+  // }
+  
+
+
   getUsers():Observable<any[]>{
     return this.http.get<any[]>("http://localhost:8080/user/getalluser")
   }
@@ -67,6 +113,14 @@ export class UsersServiceService implements OnInit{
       };
       return this.http.delete<void>(url, { headers });
     }
+
+    banuser(userId:string){
+      const url = `${this.url}/${userId}`;
+    }
+
+
+
+
     public getToken(): string | null {
       return localStorage.getItem('token');
     }

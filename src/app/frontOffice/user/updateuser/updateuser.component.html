@@ -2,10 +2,10 @@
     <h2>Update User</h2>
   
     <form #form="ngForm" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" required>
-      </div>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" >
+      </div> -->
   
       <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
@@ -22,11 +22,11 @@
         <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
       </div>
   
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required>
       </div>
-  
+   -->
       <div class="mb-3">
         <label for="phonenumber" class="form-label">Phone Number</label>
         <input type="tel" class="form-control" id="phonenumber" name="phonenumber" [(ngModel)]="phonenumber">
@@ -36,4 +36,3 @@
     </form>
   </div>
   
-  {{userId}}

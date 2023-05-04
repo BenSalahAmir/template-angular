@@ -1,45 +1,102 @@
+ <!--start wrapper-->
+ <div class="wrapper">
+  <div class="">
+    <div class="row g-0 m-0">
+      <div class="col-xl-6 col-lg-12">
+        <div class="login-cover-wrapper">
+          <div class="card shadow-none">
+            <div class="card-body">
+              <div class="text-center">
+                <h4>Join us today</h4>
+                <p>Enter your email and password to register</p>
+              </div>
+              <form #fr="ngForm" (ngSubmit)="Submit(fr)" class="form-body row g-3">
+                <div class="col-12">
+                  <label for="inputName" class="form-label">UserName</label>
+                  <!-- <input type="text" class="form-control" id="inputName" /> -->
+                  <input type="text" class="form-control" name="username" class="form-control" [(ngModel)]="username" id="username" required>                    
+                </div>
+
+                <div class="col-12">
+                  <label for="inputName" class="form-label">FirstName</label>
+                  <!-- <input type="text" class="form-control" id="inputName" /> -->
+                  <input type="text" class="form-control"  name="firstname" class="form-control" [(ngModel)]="firstname" id="firstname">
+               
+                </div>
+
+                <div class="col-12">
+                  <label for="inputName" class="form-label">LastName</label>
+                  <!-- <input type="text" class="form-control" id="inputName" /> -->
+                  <input type="text" class="form-control" name="lastname" class="form-control" [(ngModel)]="lastname" id="lastname">
+
+                </div>
+
+                <div class="col-12">
+                  <label for="inputEmail" class="form-label">Email</label>
+                  <!-- <input type="email" class="form-control" id="inputEmail"> -->
+
+                  <input type="text" class="form-control" name="email" class="form-control" [(ngModel)]="email" id="email">
+
+                </div>
+                <div class="col-12">
+                  <label for="inputPassword" class="form-label">Password</label>
+                  <!-- <input type="password" class="form-control" id="inputPassword"> -->
+
+                  <input type="password" class="form-control" name="password" class="form-control" [(ngModel)]="password" id="password">
+
+                </div>
+                <div class="col-12">
+                  <label for="inputPassword" class="form-label">phonenumber</label>
+                  <!-- <input type="password" class="form-control" id="inputPassword"> -->
+                  <input type="text"  class="form-control" name="phonenumber" class="form-control" [(ngModel)]="phonenumber" id="phonenumber">
+
+                </div>
 
 
 
-<div style="background-color: #d3d3d3;">
 
- <div class="card registration-container" >
-    <div class="card-body">
-      <h2 class="card-title">Join Shopiny</h2>
-      <form #fr="ngForm" (ngSubmit)="Submit(fr)">
-        <div class="form-group">
-          <label for="username" class="form-label">Username</label>
-          <input type="text" name="name" class="form-control" [(ngModel)]="username" id="username">
-        </div>
-        <div class="form-group">
-          <label for="firstname" class="form-label">First Name</label>
-          <input type="text" name="firstname" class="form-control" [(ngModel)]="firstname" id="firstname">
-        </div>
-        <div class="form-group">
-          <label for="lastname" class="form-label">Last Name</label>
-          <input type="text" name="lastname" class="form-control" [(ngModel)]="lastname" id="lastname">
-        </div>
-        <div class="form-group">
-          <label for="email" class="form-label">Email</label>
-          <input type="text" name="email" class="form-control" [(ngModel)]="email" id="email">
-        </div>
-        <div class="form-group">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" name="password" class="form-control" [(ngModel)]="password" id="password">
-        </div>
-        <div class="form-group">
-          <label for="phoneNumber" class="form-label">Phone Number</label>
-          <input type="text" name="phonenumber" class="form-control" [(ngModel)]="phonenumber" id="phonenumber">
-        </div>
-        <button type="submit" class="btn btn-primary" [disabled]="submitting">Sign up for Shopiny</button>
 
-        <div *ngIf="errorMessage" class="alert alert-danger" style="color: red;">{{ errorMessage }}</div>
+                <div class="col-12 col-lg-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      I agree the Terms and Conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-12">
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-dark">Sign Up</button>
+                  </div>
+                  <div *ngIf="errorMessage" class="alert alert-danger" style="color: red;">{{ errorMessage }}</div>
 
-      </form>
-      <p class="card-text">By clicking "Sign up for Shopiny", you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Statement</a>. We’ll occasionally send you account related emails.</p>
-      <p class="card-text">Already have an account? <a [routerLink]="['/signin']">Sign in</a></p>
+                </div>
+                <div class="col-12 col-lg-12">
+                  <div class="position-relative border-bottom my-3">
+                    <div class="position-absolute seperator translate-middle-y">or continue with</div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-12">
+                  <div class="social-login d-flex flex-row align-items-center justify-content-center gap-2 my-2">
+                    <a href="javascript:;" class=""><img src="assets/images/icons/facebook.png" alt=""></a>
+                    <a href="javascript:;" class=""><img src="assets/images/icons/apple-black-logo.png" alt=""></a>
+                    <a href="javascript:;" class=""><img src="assets/images/icons/google.png" alt=""></a>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-12 text-center">
+                  <p class="mb-0">Already have an account? <a [routerLink]="['/signin']">Sign in</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-12">
+        <div class="position-fixed top-0 h-100 d-xl-block d-none register-cover-img">
+        </div>
+      </div>
     </div>
+    <!--end row-->
   </div>
-
-</div> 
-
+</div>
+<!--end wrapper-->

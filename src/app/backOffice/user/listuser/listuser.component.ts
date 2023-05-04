@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { UsersServiceService } from 'src/app/Service/Users/users-service.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UsersServiceService } from 'src/app/Service/Users/users-service.service
 })
 export class ListuserComponent {
   users!:any[];
-  constructor(private service:UsersServiceService){}
+  constructor(private service:UsersServiceService,private router:Router){}
 
   ngOnInit(): void {
     this.getUsers();
@@ -28,5 +29,18 @@ onDelete(userId: string): void {
     console.log(`User with id ${userId} deleted`);
   });
 }
+ban(userId: string): void {
+  this.service.banuser(userId);
+  const url = `http://localhost:8180/auth/admin/master/console/#/realms/central-realm/users/${userId}`;
+  this.router.navigate([url]);
+
+}
+
+redirectToUsersPage(id: string) {
+  const url = `http://localhost:8180/auth/admin/master/console/#/realms/central-realm/users/${id}`;
+  window.location.href = url;
+}
+
+
 
 }

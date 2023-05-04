@@ -15,6 +15,7 @@
         <button class="btn btn-default" type="submit"><i class="bx bx-search"></i></button>
       </div>
     </form>
+    
     <span class="separator"></span>
     <ul class="notifications">
       <li>
@@ -172,8 +173,14 @@
         </figure>
         <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
           <span class="name">John Doe Junior</span>
+          <a class="dropdown-item dropdown-toggle" (click)="logout()">
+            <i class="fas fa-sign-out-alt header-nav-top-icon text-color-dark"></i>
+            Logout
+          </a>
+
           <span class="role">Administrator</span>
         </div>
+
         <i class="fa custom-caret"></i>
       </a>
       <div class="dropdown-menu">

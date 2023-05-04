@@ -21,6 +21,7 @@ import { ListuserComponent } from './backOffice/user/listuser/listuser.component
 import { AdduserComponent } from './frontOffice/user/adduser/adduser.component';
 import { LoginComponent } from './frontOffice/user/login/login.component';
 import { UpdateuserComponent } from './frontOffice/user/updateuser/updateuser.component';
+import { LoginhazemComponent } from './loginhazem/loginhazem.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UpdateuserComponent } from './frontOffice/user/updateuser/updateuser.co
     ListuserComponent,
     AdduserComponent,
     LoginComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    LoginhazemComponent
 
   ],
   imports: [
